@@ -12,5 +12,16 @@ public class Student {
         this.grades = new ArrayList<>();
     }
 
+    public long getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public ArrayList<Integer> getGrades() {
+        return this.grades;
+    }
 
 }
