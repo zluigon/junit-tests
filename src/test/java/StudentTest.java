@@ -30,4 +30,12 @@ public class StudentTest {
         fer.addGrade(80);
         assertSame(80, fer.getGrades().get(1));
     }
+
+    @Test
+    public void testAverageGrade(){
+        Student fer = new Student(1L, "fer");
+        fer.addGrade(100);
+        fer.addGrade(80);
+        assertEquals(90, fer.getGradeAverage(), 0);
+    }
 }
