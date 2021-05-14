@@ -20,4 +20,19 @@ public class Student {
         return this.name;
     }
 
+    public void addGrade(int grade) {
+        grades.add(grade);
+    }
+
+    public ArrayList<Integer> getGrades() {
+        return this.grades;
+    }
+
+    public double getGradeAverage() {
+        double sum = 0;
+        for (int grade : this.grades) {
+            sum += grade;
+        }
+        return sum / getGrades().size();
+    }
 }
