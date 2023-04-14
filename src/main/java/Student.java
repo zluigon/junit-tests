@@ -12,20 +12,21 @@ public class Student {
         this.grades = new ArrayList<>();
     }
 
-    // returns the student's id
+
     public long getId() {
         return this.id;
     }
 
-    // returns the student's name
+
     public String getName() {
         return this.name;
     }
 
-    // returns the list of grades
+
     public ArrayList<Integer> getGrades() {
         return this.grades;
     }
+
 
     // adds the given grade to the grades list
     public void addGrade(int grade) {
@@ -40,5 +41,6 @@ public class Student {
             gradeTotal += grade;
         }
         return gradeTotal / grades.size();
+
     }
 }
