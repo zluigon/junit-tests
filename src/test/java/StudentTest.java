@@ -1,41 +1,45 @@
 import org.junit.Test;
 
-import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
 public class StudentTest {
+
     @Test
-    public void testCreateStudent(){
-        Student fer = new Student(1L, "fer");
-        Student ryan = null;
-        assertNull(ryan);
-        assertNotNull(fer);
+    public void testStudentConstructor() {
+        Student student = new Student(1L, "test");
+        Student studentTwo = null;
+
+        assertNotNull(student);
+        assertNull(studentTwo);
     }
 
     @Test
-    public void testStudentFields(){
-        Student fer = new Student(1L, "fer");
-        assertSame(1L, fer.getId());
-        assertSame("fer", fer.getName());
-        assertSame(0, fer.getGrades().size());
-    }
+    public void testStudentFields() {
+        Student student = new Student(1L, "James");
 
-
-    @Test
-    public void testAddGrade(){
-        Student fer = new Student(1L, "fer");
-        fer.addGrade(100);
-        assertSame(100, fer.getGrades().get(0));
-        fer.addGrade(80);
-        assertSame(80, fer.getGrades().get(1));
+        assertSame(1L, student.getId());
+        assertSame("James", student.getName());
+        assertEquals(0, student.getGrades().size());
     }
 
     @Test
-    public void testAverageGrade(){
-        Student fer = new Student(1L, "fer");
-        fer.addGrade(100);
-        fer.addGrade(80);
-        assertEquals(90, fer.getGradeAverage(), 0);
+    public void testAddGrade() {
+        Student student = new Student(1L, "James");
+        student.addGrade(83);
+
+        assertEquals(1, student.getGrades().size());
+        assertSame(83, student.getGrades().get(0));
+    }
+
+    @Test
+    public void testGradeAvg() {
+        Student student = new Student(1L, "James");
+        student.addGrade(93);
+        student.addGrade(97);
+
+        assertEquals(95, student.getGradeAverage(), 0);
+        assertEquals(2, student.getGrades().size());
     }
 }
+

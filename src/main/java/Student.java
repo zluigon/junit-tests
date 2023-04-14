@@ -12,27 +12,35 @@ public class Student {
         this.grades = new ArrayList<>();
     }
 
+
     public long getId() {
         return this.id;
     }
+
 
     public String getName() {
         return this.name;
     }
 
+
     public ArrayList<Integer> getGrades() {
         return this.grades;
     }
 
+
+    // adds the given grade to the grades list
     public void addGrade(int grade) {
-        this.grades.add(grade);
+        grades.add(grade);
     }
 
+    // returns the average of the students grades
     public double getGradeAverage() {
-        double sum = 0;
-        for (int grade: this.grades) {
-            sum += grade;
+        double gradeTotal = 0;
+
+        for (Integer grade : grades) {
+            gradeTotal += grade;
         }
-        return sum / this.grades.size() ;
+        return gradeTotal / grades.size();
+
     }
 }
